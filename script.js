@@ -1,7 +1,16 @@
 // Pseudocode
 //
 // Create getComputerChoice variable randomly selects between 'rock,' 'paper,' and 'scissors'
+function getComputerChoice() {
+    let computerChoices = ["rock", "paper", "scissors"];
+    function getRandomInt() {
+        let selection = Math.floor(Math.random() * 3);
+        return selection;
+    }
+    return computerChoices[getRandomInt()];
+}
 // Store the output from getComputerChoice in computerSelection
+let computerSelection = getComputerChoice();
 // Ask player to input either 'rock,' 'paper,' or 'scissors' and store their response in playerSelection
 // Convert player's answer to all lowercase (if necessary)
 // If playerSelection is empty, display "You haven't chosen anything."
