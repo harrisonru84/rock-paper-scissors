@@ -1,5 +1,6 @@
 // Pseudocode
 
+// Breaks so that the console is visible underneath the Chrome prompt window
 console.log("\n");
 console.log("\n");
 console.log("\n");
@@ -8,23 +9,28 @@ console.log("\n");
 console.log("ROCK PAPER SCISSORS by HARRISON RUSSELL");
 console.log("\n");
 
+// Play through the game
 game();
 
+// Create a game function that contains the entirety of the gameplay so it can be easily repeated
 function game() {
     
     // Create getComputerChoice function randomly selects between 'rock,' 'paper,' and 'scissors'
     function getComputerChoice() {
+        // Array that stores choices
         let computerChoices = ["rock", "paper", "scissors"];
+        // Random number generator that will select one of the choices
         function getRandomInt() {
             return Math.floor(Math.random() * 3);
         }
         return computerChoices[getRandomInt()];
     }
 
-    // Create two variables that score computer's and player's win count
+    // Create two variables that score computer's and player's win count through each round
     let computerWins = parseInt(0);
     let playerWins = parseInt(0);
-    
+
+    // Repeat the game five times
     console.log("ROUND ONE")
     playRound();
     
@@ -40,6 +46,7 @@ function game() {
     console.log("FINAL ROUND")
     playRound();
 
+    // Create a function containing the gameplay for one full round, so it can be repeated 
     function playRound() {
         // Store the output from getComputerChoice in computerSelection
         let computerSelection = getComputerChoice();
@@ -79,12 +86,8 @@ function game() {
             // Display player's selection
             console.log("You chose " + playerSelection + ".");
 
-            // If playerSelection = rock & computerSelection = rock, display "Computer also chose rock. It's a tie."
-            if (playerSelection === "rock" && computerSelection === "rock") {
-                console.log("Computer also chose rock. It's a tie.");
-            }
             // If playerSelection = rock & computerSelection = scissors, display "Computer chose scissors. You win!"
-            else if (playerSelection === "rock" && computerSelection === "scissors") {
+            if (playerSelection === "rock" && computerSelection === "scissors") {
                 // Player won, so increment player's win count by one
                 ++playerWins;
                 console.log("Computer chose scissors. You win!");
@@ -100,10 +103,7 @@ function game() {
                 ++playerWins;    
                 console.log("Computer chose rock. You win!");
             }
-            // If playerSelection = paper & computerSelection = paper, display "Computer also chose paper. It's a tie."
-            else if (playerSelection === "paper" && computerSelection === "paper") {
-                console.log("Computer also chose paper. It's a tie.");
-            }
+
             // If playerSelection = paper & computerSelection = scissors, display "Computer chose scissors. You lose."
             else if (playerSelection === "paper" && computerSelection === "scissors") {
                 ++computerWins;
@@ -119,9 +119,9 @@ function game() {
                 ++playerWins;
                 console.log("Computer chose paper. You win.");
             }
-            // If playerSelection = scissors & computerSelection = scissors, display "Computer also chose scissors. It's a tie."
-            else if (playerSelection === "scissors" && computerSelection === "scissors") {
-                console.log("Computer also chose scissors. It's a tie.");
+            // If playerSelection = computerSelection "Computer also chose __________. It's a tie."
+            else if (playerSelection === computerSelection) {
+                console.log("Computer also chose " + computerSelection + ". It's a tie.");
             }
 
             console.log("Computer: " + computerWins + "\n" + "You: " + playerWins);
