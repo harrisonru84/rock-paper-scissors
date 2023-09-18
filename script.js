@@ -1,6 +1,12 @@
 // Pseudocode
 
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
+console.log("\n");
 console.log("ROCK PAPER SCISSORS by HARRISON RUSSELL");
+console.log("\n");
 
 game();
 
@@ -10,8 +16,7 @@ function game() {
     function getComputerChoice() {
         let computerChoices = ["rock", "paper", "scissors"];
         function getRandomInt() {
-            let selection = Math.floor(Math.random() * 3);
-            return selection;
+            return Math.floor(Math.random() * 3);
         }
         return computerChoices[getRandomInt()];
     }
@@ -19,11 +24,20 @@ function game() {
     // Create two variables that score computer's and player's win count
     let computerWins = parseInt(0);
     let playerWins = parseInt(0);
+    
+    console.log("ROUND ONE")
+    playRound();
+    
+    console.log("ROUND TWO")
+    playRound();
 
+    console.log("ROUND THREE")
     playRound();
+
+    console.log("ROUND FOUR")
     playRound();
-    playRound();
-    playRound();
+
+    console.log("FINAL ROUND")
     playRound();
 
     function playRound() {
@@ -34,9 +48,30 @@ function game() {
         let playerSelection = prompt("Rock, paper, or scissors?");
 
         // If playerSelection is empty, display "You haven't chosen anything."
-        if (playerSelection==="" || playerSelection===null) {
-            alert("You didn't enter anything!");
+        if (playerSelection==="") {
+            alert("You didn't enter anything, so you've foreited this round.");
+            ++computerWins;
+            console.log("You forfeited, so the computer wins by default. Computer wins by default.");
+            console.log("Computer: " + computerWins + "\n" + "You: " + playerWins);
+            console.log("\n");
         }
+
+        else if (playerSelection===null) {
+            alert("You hit cancel, so you've forfeited this round. Computer wins by default.");
+            ++computerWins;
+            console.log("You forfeited, so the computer wins by default.");
+            console.log("Computer: " + computerWins + "\n" + "You: " + playerWins);
+            console.log("\n");
+        }
+
+        else if (playerSelection.toLowerCase()!=="rock" && playerSelection.toLowerCase()!=="paper" && playerSelection.toLowerCase()!=="scissors") {
+            alert("That wasn't one of the options. You've forfeited this round. Computer wins by default.")
+            ++computerWins;
+            console.log("You forfeited, so the computer wins by default.");
+            console.log("Computer: " + computerWins + "\n" + "You: " + playerWins);
+            console.log("\n");
+        }
+
         else {
             // Convert player's answer to all lowercase (if necessary)
             playerSelection = playerSelection.toLowerCase();
@@ -89,27 +124,35 @@ function game() {
                 console.log("Computer also chose scissors. It's a tie.");
             }
 
-            console.log("Computer Wins: " + computerWins + "\n" + "Your wins: " + playerWins);
+            console.log("Computer: " + computerWins + "\n" + "You: " + playerWins);
+            console.log("\n");
 
         }
     }
 
-    // Display a game over message
-    console.log("Game over.");
+    let result;
 
     // Display the final score and tell the player whether or not they won
     if (computerWins > playerWins) {
-        console.log("Computer won. Try again.");
+        result = ("The computer won. Maybe you'll beat it next time.");
     }
     else if (playerWins > computerWins) {
-        console.log("You won! You're smarter than a computer.");
+        result = ("You won! You're smarter than a computer.");
+    }
+    else if (playerWins ==="0" && computerWins ==="0") {
+        result = ("Neither you nor the computer scored. Maybe next time.")
     }
     else {
-        console.log("It was a tie. Better luck next time.");
+        result = ("It was a tie. You're essentially as smart as a computer.");
     }
 
+    // Display a game over message
+    console.log("Game over. \n \n" + result);
+
+    console.log("\n");
+
     // Reset the game upon each player's selection.
-    console.log("Reload the page to try again.")
+    console.log("Reload the page to try again.");
 
 }   
 
