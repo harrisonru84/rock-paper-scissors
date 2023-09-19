@@ -55,12 +55,10 @@ function game() {
         let playerSelection = prompt("Rock, paper, or scissors?");
 
         // If playerSelection is empty, display "You haven't chosen anything."
-        if (playerSelection==="") {
+        if (playerSelection==="" || playerSelection===null || playerSelection.toLowerCase()!=="rock" && 
+            playerSelection.toLowerCase()!=="paper" && playerSelection.toLowerCase()!=="scissors") {
             alert("You didn't enter anything, so you've foreited this round.");
-            ++computerWins;
-            console.log("You forfeited, so the computer wins by default. Computer wins by default.");
-            console.log("Computer: " + computerWins + "\n" + "You: " + playerWins);
-            console.log("\n");
+            break
         }
 
         else if (playerSelection===null) {
