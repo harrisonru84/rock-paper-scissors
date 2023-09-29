@@ -1,6 +1,5 @@
 body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -10,14 +9,13 @@ body {
 }
 p {
     color: white;
+    height: 0.85rem;
 }
-.player-result, 
-.round-result, 
-.winner {
-    color: lightcoral;
+.objective {
+    padding-bottom: 15px;
 }
 .content {
-    background-color: lightcoral;
+    background-color: #6688bb;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,40 +23,35 @@ p {
     padding: 75px;
     height: 250px;
     width: 350px;
-    border-radius: 50px;
+    border-radius: 35px;
 }
-button {
+.buttons {
+    gap: 25px;
+    display: flex;
+    justify-content: space-around;
+}
+button {    
     font-family: inherit;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
-    background-color: darkblue;
+    background-color: #222255;
     color: white;
 }
 button:hover {
     background-color: white;
-    color: darkblue;
-}
-.buttons {
-    width: 50%;
-    gap: 10%;
-    display: flex;
-    justify-content: space-around;
+    color: #222255;
 }
 .results {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 20px;
-    height: 50vh;
     width: 400px;
-    border: 1px red;
+    padding: 20px 20px 10px;
 }
 .winner {
     font-weight: bold;
     padding-bottom: 15px;
-}
-.objective {
-    padding-bottom: 15px;
+    color: #222255;
 }
