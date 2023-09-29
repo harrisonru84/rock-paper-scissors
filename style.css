@@ -1,0 +1,43 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Roboto, sans-serif;
+    color: white;
+    background-color: lightblue;
+}
+.content {
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 75px;
+    height: 40vh;
+    width: 50vh;
+    border-radius: 50px;
+}
+button {
+    font-family: inherit;
+    font-size: 1rem;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: darkblue;
+    color: white;
+}
+.buttons {
+    width: 50%;
+    gap: 10%;
+    display: flex;
+    justify-content: space-around;
+}
+.results {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
