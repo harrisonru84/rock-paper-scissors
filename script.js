@@ -13,18 +13,14 @@ const scissorsButton = document.querySelector(".scissors-button");
 
 const roundResult = document.querySelector(".round-result");
 const playerResult = document.querySelector(".player-result");
-
-playerResult.textContent = "";
-roundResult.textContent = "";
+const score = document.querySelector(".score");
+const winner = document.querySelector(".winner");
 
 let computerWins = parseInt(0);
 let playerWins = parseInt(0);
 
-const score = document.querySelector(".score");
-const winner = document.querySelector(".winner");
-
-const playAgainButton = document.querySelector("play-again");
-playAgainButton.addEventListener('click', function() {location.reload()})
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener('click', function() {location.reload()})
 
 game();
 
@@ -41,22 +37,29 @@ function playRock() {
 
     if (playerSelection === computerSelection) {
         roundResult.textContent = "Computer also chose " + computerSelection + ". This round is a tie.";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
     }
     else if (playerSelection === "rock" && computerSelection === "scissors") {
         roundResult.textContent = "Computer chose scissors. You win this round!";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
         ++playerWins;
     }
     else if (playerSelection === "rock" && computerSelection === "paper") {
         roundResult.textContent = "Computer chose paper. You lose this round.";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
         ++computerWins;
     }
     score.textContent = "Computer: " + computerWins + " / You: " + playerWins;
     if (computerWins === parseInt(5) && playerWins !== parseInt(5)) {
         winner.textContent = "Computer wins. Try again next time."
+        winner.style.color = "darkblue";
     }
     else if (playerWins === parseInt(5) && computerWins !== parseInt(5)) {
         winner.textContent = "You win. You're smarter than a computer!"
-
+        winner.style.color = "darkblue";
     }
 }
 
@@ -67,22 +70,29 @@ function playPaper() {
 
     if (playerSelection === computerSelection) {
         roundResult.textContent = "Computer also chose " + computerSelection + ". This round is a tie.";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
     }
     else if (playerSelection === "paper" && computerSelection === "rock") {
         roundResult.textContent = "Computer chose rock. You win this round!";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
         ++playerWins;
     }
     else if (playerSelection === "paper" && computerSelection === "scissors") {
         roundResult.textContent = "Computer chose scissors. You lose this round.";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
         ++computerWins;
     }
     score.textContent = "Computer: " + computerWins + " / You: " + playerWins;
     if (computerWins === parseInt(5) && playerWins !== parseInt(5)) {
         winner.textContent = "Computer wins. Try again next time."
+        winner.style.color = "darkblue";
     }
     else if (playerWins === parseInt(5) && computerWins !== parseInt(5)) {
         winner.textContent = "You win. You're smarter than a computer!"
-
+        winner.style.color = "darkblue";
     }
 }
 
@@ -93,21 +103,30 @@ function playScissors() {
 
     if (playerSelection === computerSelection) {
         roundResult.textContent = "Computer also chose " + computerSelection + ". This round is a tie.";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
     }
     else if (playerSelection === "scissors" && computerSelection === "paper") {
         roundResult.textContent = "Computer chose paper. You win this round!";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
         ++playerWins;
     }
     else if (playerSelection === "scissors" && computerSelection === "rock") {
         roundResult.textContent = "Computer chose rock. You lose this round.";
+        roundResult.style.color = "white";
+        playerResult.style.color = "white";
         ++computerWins;
     }
     score.textContent = "Computer: " + computerWins + " / You: " + playerWins;
     if (computerWins === parseInt(5) && playerWins !== parseInt(5)) {
         winner.textContent = "Computer wins. Try again next time."
+        winner.style.color = "darkblue";
     }
     else if (playerWins === parseInt(5) && computerWins !== parseInt(5)) {
         winner.textContent = "You win. You're smarter than a computer!"
-
+        winner.style.color = "darkblue";
     }
+}
+
 }

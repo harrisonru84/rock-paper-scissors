@@ -5,8 +5,16 @@ body {
     align-items: center;
     height: 100vh;
     font-family: Roboto, sans-serif;
-    color: white;
     background-color: lightblue;
+    font-size: 0.85rem; 
+}
+p {
+    color: white;
+}
+.player-result, 
+.round-result, 
+.winner {
+    color: lightcoral;
 }
 .content {
     background-color: lightcoral;
@@ -15,18 +23,21 @@ body {
     justify-content: center;
     align-items: center;
     padding: 75px;
-    height: 40vh;
-    width: 50vh;
+    height: 250px;
+    width: 350px;
     border-radius: 50px;
 }
 button {
     font-family: inherit;
-    font-size: 1rem;
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
     background-color: darkblue;
     color: white;
+}
+button:hover {
+    background-color: white;
+    color: darkblue;
 }
 .buttons {
     width: 50%;
@@ -35,9 +46,19 @@ button {
     justify-content: space-around;
 }
 .results {
-    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 20px;
+    height: 50vh;
+    width: 400px;
+    border: 1px red;
+}
+.winner {
+    font-weight: bold;
+    padding-bottom: 15px;
+}
+.objective {
+    padding-bottom: 15px;
 }
