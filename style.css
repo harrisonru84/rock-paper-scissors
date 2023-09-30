@@ -1,18 +1,23 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 95vh;
     font-family: Roboto, sans-serif;
     background-color: lightblue;
-    font-size: 0.85rem; 
+    font-size: 1rem; 
+}
+img {
+    width: 175px;
 }
 p {
     color: white;
-    height: 0.85rem;
+    height: 1rem;
 }
 .objective {
-    padding-bottom: 15px;
+    padding-bottom: 25px;
+    font-weight: bold;
 }
 .content {
     background-color: #6688bb;
@@ -21,9 +26,10 @@ p {
     justify-content: center;
     align-items: center;
     padding: 75px;
-    height: 250px;
     width: 350px;
+    height: 300px;
     border-radius: 35px;
+    gap: 10px;
 }
 .buttons {
     gap: 25px;
@@ -33,10 +39,11 @@ p {
 button {    
     font-family: inherit;
     border: none;
-    padding: 5px 10px;
+    padding: 10px 25px;
     border-radius: 5px;
     background-color: #222255;
     color: white;
+    font-weight: bold;
 }
 button:hover {
     background-color: white;
@@ -50,8 +57,13 @@ button:hover {
     width: 400px;
     padding: 20px 20px 10px;
 }
-.winner {
+h3 {
+    color: white;
+    font-size: 1.2rem;
+}
+.score {
+    margin-top: 30px;
     font-weight: bold;
-    padding-bottom: 15px;
     color: #222255;
+    font-size: 1.2rem;
 }
