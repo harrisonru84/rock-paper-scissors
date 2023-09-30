@@ -20,6 +20,8 @@ const scissorsButton = document.querySelector(".scissors-button");
 
 // Text Elements
 const score = document.querySelector(".score");
+const computerScore = document.querySelector(".computer-score")
+const playerScore = document.querySelector(".player-score")
 const playerResult = document.querySelector(".player-result");
 const roundResult = document.querySelector(".round-result");
 
@@ -49,7 +51,9 @@ function playRock() {
         roundResult.textContent = "Computer chose paper. You lose this round.";
         ++computerWins;
     }
-    score.textContent = "Computer: " + computerWins + " / You: " + playerWins;
+    computerScore.textContent = "Computer: " + computerWins;
+    playerScore.textContent = "You: " + playerWins;
+
     if (computerWins === parseInt(5)) {
         computerIsTheWinner();
     }
@@ -75,7 +79,9 @@ function playPaper() {
         roundResult.textContent = "Computer chose scissors. You lose this round.";
         ++computerWins;
     }
-    score.textContent = "Computer: " + computerWins + " / You: " + playerWins;
+    computerScore.textContent = "Computer: " + computerWins;
+    playerScore.textContent = "You: " + playerWins;
+
     if (computerWins === parseInt(5)) {
         computerIsTheWinner();
     }
@@ -101,7 +107,9 @@ function playScissors() {
         roundResult.textContent = "Computer chose rock. You lose this round.";
         ++computerWins;
     }
-    score.textContent = "Computer: " + computerWins + " / You: " + playerWins;
+    computerScore.textContent = "Computer: " + computerWins;
+    playerScore.textContent = "You: " + playerWins;    
+    
     if (computerWins === parseInt(5)) {
         computerIsTheWinner();
     }
@@ -127,7 +135,7 @@ function playerIsTheWinner() {
     
     resetButton.addEventListener('click', () => {location.reload()})
 
-    results.style.marginTop = "-25px";
+    content.style.gap = "20px";
 }
 
 // Computer is first to 5 points
@@ -147,6 +155,5 @@ function computerIsTheWinner() {
 
     resetButton.addEventListener('click', () => {location.reload()})
 
-    results.style.marginTop = "-25px";
-
+    content.style.gap = "20px";
 }

@@ -1,10 +1,13 @@
+/* * {
+    border: 1px solid red;
+} */
 body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 95vh;
-    font-family: Roboto, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: lightblue;
     font-size: 1rem; 
 }
@@ -16,7 +19,6 @@ p {
     height: 1rem;
 }
 .objective {
-    padding-bottom: 25px;
     font-weight: bold;
 }
 .content {
@@ -29,7 +31,7 @@ p {
     width: 350px;
     height: 300px;
     border-radius: 35px;
-    gap: 10px;
+    gap: 30px;
 }
 .buttons {
     gap: 25px;
@@ -54,8 +56,6 @@ button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 400px;
-    padding: 20px 20px 10px;
 }
 h3 {
     color: white;
@@ -64,6 +64,12 @@ h3 {
 .score {
     margin-top: 30px;
     font-weight: bold;
-    color: #222255;
     font-size: 1.2rem;
+    display: flex;
+    gap: 50px;
+    margin-top: 0px;
+}
+.player-score,
+.computer-score {
+    color: #222255;
 }
