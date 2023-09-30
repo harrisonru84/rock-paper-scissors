@@ -28,7 +28,7 @@ p {
     justify-content: center;
     align-items: center;
     padding: 75px;
-    width: 350px;
+    max-width: 350px;
     height: 300px;
     border-radius: 35px;
     gap: 30px;
@@ -36,7 +36,7 @@ p {
 .buttons {
     gap: 25px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 button {    
     font-family: inherit;
