@@ -41,7 +41,8 @@ p {
 button {    
     font-family: inherit;
     border: none;
-    padding: 10px 25px;
+    padding: 10px 25px; 
+    width: 120px;
     border-radius: 5px;
     background-color: #222255;
     color: white;
